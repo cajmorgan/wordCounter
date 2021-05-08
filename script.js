@@ -2,12 +2,14 @@
 //Selectors
 let text = '';
 let countWords = '';
+let totalPages = document.querySelector('.pages');
 const genBtn = document.querySelector('.generate');
 const settingsBtn = document.querySelector('.settings');
 const saveBtn = document.querySelector('.save');
 const settings = document.querySelector('.settingsPop');
 const loader = document.querySelector('.loaderDiv');
 const totalWords = document.querySelector('.total');
+const defaultWords = document.querySelector('.total').textContent;
 genBtn.addEventListener('click', loadIt);
 
 //Settings
@@ -35,11 +37,12 @@ function loadIt() {
 }
 
 function counter(value) {
-    
     text = document.querySelector('#textarea').value.toLowerCase().replace(/\.|\,|\(|\)|[!@#$%^&*?=]/g,'').replace(/\s\s+|\r?\n|\r/g,' ');
     array = text.split(' ');
     //add counter
+    totalWords.textContent = defaultWords;
     countWords = array.length;
+    totalPages.textContent = "APPROXIMATELY " + (Math.round((countWords / 500) * 10) / 10) + " PAGES";
     totalWords.textContent += " " + countWords; 
     array.forEach(function (currentWord, index) {
     countOfArray[index] = array.filter((v) => (v === currentWord.toLowerCase())).length; 
