@@ -5,7 +5,8 @@ const genBtn = document.querySelector('.generate');
 const settingsBtn = document.querySelector('.settings');
 const saveBtn = document.querySelector('.save');
 const settings = document.querySelector('.settingsPop');
-genBtn.addEventListener('click', counter);
+const loader = document.querySelector('.loaderDiv');
+genBtn.addEventListener('click', loadIt);
 
 //Settings
 let num = document.querySelector('.howMany').value;
@@ -23,8 +24,16 @@ let array = undefined;
 let countOfArray = [''];
 let result = '';
 
+function loadIt() {
+    loader.style.display = "block";
+    setTimeout( () => {
+        counter();
+    }, 100)
+
+}
 
 function counter(value) {
+    
     text = document.querySelector('#textarea').value.toLowerCase().replace(/\.|\,|\(|\)|[!@#$%^&*?=]/g,'').replace(/\s\s+|\r?\n|\r/g,' ');
     array = text.split(' ');
     array.forEach(function (currentWord, index) {
@@ -62,6 +71,8 @@ function sortIt() {
     let sortFunction = (a, b) =>  Number((b.match(/(\d+)/g)[0])) - (Number(a.match(/(\d+)/g)[0]));
     result = array.sort(sortFunction).join('\n\n');
     document.querySelector('#textarea').value = result;
+    loader.style.display = "none";
+   
 }
  
 
