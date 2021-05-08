@@ -106,6 +106,16 @@ p {
   width: 60vw;
   height: 40vw;
   outline: none;
+  animation: textstart 1s;
+}
+
+@keyframes textstart {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60vw;
+  }
 }
 
 .buttons {
