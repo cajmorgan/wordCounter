@@ -1,0 +1,138 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  animation: gradientswiper 4s infinite;
+}
+@font-face {
+  font-family: pixel;
+  src: url("font/Pixeled.ttf");
+}
+
+@keyframes gradientswiper {
+  0%,
+  100% {
+    background-color: white;
+  }
+  50% {
+    background-color: rgb(213, 213, 213);
+  }
+}
+
+h1,
+h2,
+h3,
+p {
+  font-family: pixel, sans-serif;
+}
+
+.settingsPop {
+  background-color: rgb(184, 184, 184);
+  border: 3px solid black;
+  position: absolute;
+  display: none;
+  padding: 5vw;
+  height: 30%;
+  width: 20vw;
+  text-align: center;
+  background-color: rgb(220, 220, 220);
+  z-index: 10;
+  top: 20%;
+}
+
+.settingsPop button,
+.howMany,
+h2,
+p {
+  position: relative;
+  margin: 5px;
+  padding: 10px;
+  bottom: 1.5vh;
+  font-size: 1.2vh;
+  font-size: 1vw;
+  font-family: pixel, sans-serif;
+}
+p {
+  font-size: 0.8vh;
+  font-size: 0.6vw;
+  text-transform: capitalize;
+}
+
+@media (min-width: 1800px) {
+  .settingsPop button,
+  .howMany,
+  h2,
+  p {
+    bottom: 2vw;
+  }
+}
+
+.settingsPop button {
+  padding: 1vh 2vw;
+  margin: 10px 4px;
+  font-size: 1.2vh;
+  text-align: center;
+  border: 3px solid gray;
+  background: rgba(134, 172, 255, 0.249);
+  cursor: pointer;
+  transition-duration: 1s;
+  outline: none;
+}
+.howMany {
+  padding: 15px 0px;
+  width: 12vw;
+  text-align: center;
+  font-size: 1.3vh;
+}
+.space {
+  padding: 20px;
+  text-align: center;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#textarea {
+  position: relative;
+  flex-grow: 20;
+  text-align: center;
+  font-size: 1.5em;
+  width: 60vw;
+  height: 40vw;
+  outline: none;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.buttons button {
+  padding: 20px 50px;
+  margin: 10px 4px;
+  width: 50%;
+  font-size: 1em;
+  text-align: center;
+  align-self: center;
+  border: 3px solid gray;
+  background: rgba(134, 172, 255, 0.249);
+  cursor: pointer;
+  transition-duration: 1s;
+  outline: none;
+  font-family: pixel, sans-serif;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+button:active {
+  background: rgba(134, 172, 255, 1);
+  transition-duration: 0s;
+}
