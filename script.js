@@ -1,11 +1,13 @@
 // const text = "hej hej hej jag är är är är cool cool cool cool cool"
 //Selectors
 let text = '';
+let countWords = '';
 const genBtn = document.querySelector('.generate');
 const settingsBtn = document.querySelector('.settings');
 const saveBtn = document.querySelector('.save');
 const settings = document.querySelector('.settingsPop');
 const loader = document.querySelector('.loaderDiv');
+const totalWords = document.querySelector('.total');
 genBtn.addEventListener('click', loadIt);
 
 //Settings
@@ -36,6 +38,9 @@ function counter(value) {
     
     text = document.querySelector('#textarea').value.toLowerCase().replace(/\.|\,|\(|\)|[!@#$%^&*?=]/g,'').replace(/\s\s+|\r?\n|\r/g,' ');
     array = text.split(' ');
+    //add counter
+    countWords = array.length;
+    totalWords.textContent += " " + countWords; 
     array.forEach(function (currentWord, index) {
     countOfArray[index] = array.filter((v) => (v === currentWord.toLowerCase())).length; 
     })
