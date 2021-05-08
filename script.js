@@ -3,6 +3,7 @@
 let text = '';
 let countWords = '';
 let totalPages = document.querySelector('.pages');
+const defaultPages = document.querySelector('.pages').textContent; 
 const genBtn = document.querySelector('.generate');
 const settingsBtn = document.querySelector('.settings');
 const saveBtn = document.querySelector('.save');
@@ -41,6 +42,7 @@ function counter(value) {
     array = text.split(' ');
     //add counter
     totalWords.textContent = defaultWords;
+    totalPages.textContent = defaultPages;
     countWords = array.length;
     totalPages.textContent += " " + (Math.round((countWords / 500) * 10) / 10);
     totalWords.textContent += " " + countWords; 
