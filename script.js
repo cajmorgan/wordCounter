@@ -42,7 +42,7 @@ function counter(value) {
     //add counter
     totalWords.textContent = defaultWords;
     countWords = array.length;
-    totalPages.textContent = "APPROXIMATELY " + (Math.round((countWords / 500) * 10) / 10) + " PAGES";
+    totalPages.textContent += " " + (Math.round((countWords / 500) * 10) / 10);
     totalWords.textContent += " " + countWords; 
     array.forEach(function (currentWord, index) {
     countOfArray[index] = array.filter((v) => (v === currentWord.toLowerCase())).length; 

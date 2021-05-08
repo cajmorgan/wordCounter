@@ -6,6 +6,7 @@ body {
   height: 100%;
   animation: gradientswiper 4s infinite;
 }
+
 @font-face {
   font-family: pixel;
   src: url("font/Pixeled.ttf");
@@ -26,10 +27,6 @@ h2,
 h3,
 p {
   font-family: pixel, sans-serif;
-}
-
-.total {
-  margin-bottom: 0;
 }
 
 .settingsPop {
@@ -91,9 +88,15 @@ p {
   font-size: 1.3vh;
 }
 .space {
-  padding: 20px;
+  padding: 0;
   text-align: center;
 }
+
+.info {
+  position: relative;
+  margin-top: 20px;
+}
+
 .content {
   display: flex;
   flex-wrap: wrap;
