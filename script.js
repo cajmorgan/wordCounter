@@ -3,6 +3,8 @@
 let text = '';
 let countWords = '';
 let totalPages = document.querySelector('.pages');
+let threshold = document.querySelector('.threshold');
+let defaultThreshold = document.querySelector('.threshold').textContent;
 const defaultPages = document.querySelector('.pages').textContent; 
 const genBtn = document.querySelector('.generate');
 const settingsBtn = document.querySelector('.settings');
@@ -11,17 +13,27 @@ const settings = document.querySelector('.settingsPop');
 const loader = document.querySelector('.loaderDiv');
 const totalWords = document.querySelector('.total');
 const defaultWords = document.querySelector('.total').textContent;
+
 genBtn.addEventListener('click', loadIt);
 
 //Settings
 let num = document.querySelector('.howMany').value;
+threshold.textContent += " " + num;
 settingsBtn.addEventListener('click', () => {
     settings.style.display = "block";
 })
 saveBtn.addEventListener('click', () => {
     num = document.querySelector('.howMany').value;
+    if(num >= 1) {
     settings.style.display = "none";
+    threshold.textContent = defaultThreshold;
+    threshold.textContent += " " + num;
     console.log(num);
+    }
+    else {
+        alert('NUMBERS LARGER THAN 1 ONLY!')
+        console.log('error')
+    }
 })
 
 //Algorithm 
