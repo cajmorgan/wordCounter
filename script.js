@@ -72,7 +72,7 @@ function sortIt() {
     result = array.sort(sortFunction).join('\n\n');
     document.querySelector('#textarea').value = result;
     loader.style.display = "none";
-   
+    document.querySelector('#textarea').scrollTop = 0;
 }
  
 
