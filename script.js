@@ -42,6 +42,7 @@ let countOfArray = [''];
 let result = '';
 
 function loadIt() {
+    
     loader.style.display = "block";
     setTimeout( () => {
         counter();
@@ -51,7 +52,12 @@ function loadIt() {
 
 function counter(value) {
     text = document.querySelector('#textarea').value.toLowerCase().replace(/\.|\,|\(|\)|[!@#$%^&*?=]/g,'').replace(/\s\s+|\r?\n|\r/g,' ');
+    if(text == "" || text == ' ' || text == '\n') {
+        loader.style.display = "none";
+        return alert('Put in your text!');
+    }
     array = text.split(' ');
+
     //add counter
     totalWords.textContent = defaultWords;
     totalPages.textContent = defaultPages;
@@ -81,7 +87,6 @@ function compareArrays() {
 }
 
 function deleteDuplicates() {
-    //Gör först en loop som testar ett ord i taget i array[i] och countOfArray[i]. 
     array = array.reduce(function(a,b){
         if (a.indexOf(b) < 0 ) a.push(b);
         return a;
