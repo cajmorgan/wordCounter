@@ -51,7 +51,7 @@ function loadIt() {
 }
 
 function counter(value) {
-    text = document.querySelector('#textarea').value.toLowerCase().replace(/\.|\,|\(|\)|[!@#$%^&*?=]/g,'').replace(/\s\s+|\r?\n|\r/g,' ');
+    text = document.querySelector('#textarea').value.toLowerCase().replace(/\.|\,|\(|\)|[!@#$%^&*?=]/g,'').replace(/\s\s+|\r?\n|\r|\-/g,' ');
     if(text == "" || text == ' ' || text == '\n') {
         loader.style.display = "none";
         return alert('Put in your text!');
