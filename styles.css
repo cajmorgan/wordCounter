@@ -61,14 +61,14 @@ p {
   text-transform: capitalize;
 }
 
-@media (min-width: 1800px) {
+/* @media (min-width: 1800px) {
   .settingsPop button,
   .howMany,
   h2,
   p {
     bottom: 2vw;
   }
-}
+} */
 
 .settingsPop button {
   padding: 1vh 2vw;
